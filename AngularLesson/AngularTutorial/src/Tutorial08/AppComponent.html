@@ -1,0 +1,44 @@
+﻿<h1>Pipe</h1>
+<h3>Date</h3>
+<div class="form-group">
+  <input type="date" [(ngModel)]="mydate" class="form-control" />
+</div>
+<div class="form-group">
+  {{mydate}}
+</div>
+<div class="form-group">
+  {{mydate | date}}
+</div>
+<div class="form-group">
+  {{mydate | date:'dd/MM/yyyy'}}
+</div>
+<hr />
+<h3>Money</h3>
+<div class="form-group">
+  <input type="number" [(ngModel)]="money" class="form-control" />
+</div>
+<div class="form-group">
+  {{money}}
+</div>
+<div class="form-group">
+  {{money | currency:'EUR'}}
+</div>
+<hr />
+<h3>Upper Case</h3>
+<div class="form-group">
+  <input type="text" [(ngModel)]="text" class="form-control" />
+</div>
+<div class="form-group">
+  {{text}}
+</div>
+<div class="form-group">
+  {{text | uppercase}}
+</div>
+<hr />
+<h3>Options, set a number</h3>
+<div class="form-group">
+  <input type="text" [(ngModel)]="number" class="form-control" />
+</div>
+<div class="form-group">
+  {{number | i18nPlural:options}}
+</div>

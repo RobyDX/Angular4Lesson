@@ -1,0 +1,24 @@
+﻿<h1>NgFor Directive</h1>
+<div class="form-group">
+    <input type="text" name="txtNome" class="form-control" placeholder="Name" [(ngModel)]="current.name" />
+</div>
+<div class="form-group">
+    <input type="text" name="txtCognome" class="form-control" placeholder="Surname" [(ngModel)]="current.surname" />
+</div>
+<div class="form-group">
+    <input type="button" (click)="Add()" class="btn" value="Add Person" />
+</div>
+<table *ngIf="items.length>0" class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of items">
+            <td>{{i.name}}</td>
+            <td>{{i.surname}}</td>
+        </tr>
+    </tbody>
+</table>

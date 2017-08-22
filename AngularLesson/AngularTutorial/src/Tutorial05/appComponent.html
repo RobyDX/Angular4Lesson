@@ -1,0 +1,22 @@
+﻿<h1>Component Hierarchy</h1>
+<div class="form-group">
+    <input type="text" name="txtName" class="form-control" placeholder="Name" #name required />
+</div>
+<div class="form-group">
+    <input type="text" name="txtSurname" class="form-control" placeholder="Surname" #surname required />
+</div>
+<div class="form-group">
+    <button (click)="Add(name,surname)" class="btn">Add</button>
+</div>
+
+<table *ngIf="items.length>0" class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tablerow *ngFor="let item of items;let i=index" [datarow]="item" (delete)="Delete($event)"></tablerow>
+    </tbody>
+</table>

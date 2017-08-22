@@ -1,0 +1,34 @@
+﻿<style>
+  input.ng-invalid.ng-dirty {
+    background-color: red;
+    border-width: 2px;
+  }
+</style>
+<h1>Custom Validators</h1>
+<form [formGroup]="myform" novalidate (ngSubmit)="save()" autocomplete="off">
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="name" placeholder="name" />
+    <span [hidden]="myform.controls.name.valid">Required</span>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="surname" placeholder="surname" />
+    <span [hidden]="myform.controls.surname.valid">Required</span>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="email" placeholder="email" />
+    <span [hidden]="myform.controls.email.valid">Invalid Email</span>
+  </div>
+  <div class="form-group" formGroupName="address">
+    <input type="text" class="form-control" formControlName="street" placeholder="street" />
+    <span [hidden]="myform.controls.address.controls.street.valid">Required</span>
+  </div>
+  <div class="form-group" formGroupName="address">
+    <input type="text" class="form-control" formControlName="number" placeholder="number" />
+    <span [hidden]="myform.controls.address.controls.number.valid">Not valid number</span>
+  </div>
+  <div class="form-group" formGroupName="address">
+    <input type="text" class="form-control" formControlName="city" placeholder="city" />
+    <span [hidden]="myform.controls.address.controls.city.valid">City non valid (choose between Rome, New York or Paris)</span>
+  </div>
+  <input type="submit" [disabled]="!myform.valid" value="save" class="btn" />
+</form>

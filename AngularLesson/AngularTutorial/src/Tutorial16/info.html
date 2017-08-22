@@ -1,0 +1,19 @@
+﻿<h1>Summary</h1>
+<form #f="ngForm" autocomplete="off">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="current.Name" name="name" required="" placeholder="Name" readonly="readonly" />
+  </div>
+  <div class="form-group">
+    <label>Surname:</label>
+    <input type="text" class="form-control" [(ngModel)]="current.Surname" name="surname" required="" placeholder="Surname" readonly="readonly" />
+  </div>
+  <div class="form-group">
+    <label>Email:</label>
+    <input type="text" class="form-control" [(ngModel)]="current.Email" name="email" required="" placeholder="Email" readonly="readonly" />
+  </div>
+  <div class="form-group">
+    <label>Phone:</label>
+    <input type="text" class="form-control" [(ngModel)]="current.Phone" name="phone" required="" placeholder="Phone" readonly="readonly" />
+  </div>
+</form>

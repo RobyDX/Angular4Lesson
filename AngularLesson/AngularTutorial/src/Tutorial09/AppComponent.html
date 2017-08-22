@@ -1,0 +1,23 @@
+﻿<h1>Pipe Custom</h1>
+<div class="form-group">
+  <input type="text" [(ngModel)]="user.name" class="form-control" />
+  <input type="text" [(ngModel)]="user.surname" class="form-control" />
+  <select [(ngModel)]="user.gender" class="form-control">
+    <option *ngFor="let i of options"
+            [value]="i.value">
+      {{i.text}}
+    </option>
+    <!--<option value="{{Gender.Male}}" selected="selected">Male</option>
+    <option value="{{Gender.Female}}">Female</option>-->
+  </select>
+</div>
+<h3>
+  <strong>Morning</strong>
+  <br />
+  {{user|userpipe:'am'}}
+</h3>
+<h3>
+  <strong>Evening</strong>
+  <br />
+  {{user|userpipe:'pm'}}
+</h3>

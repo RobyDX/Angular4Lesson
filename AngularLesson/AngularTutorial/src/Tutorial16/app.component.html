@@ -1,0 +1,24 @@
+﻿<h1>Routing</h1>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a [routerLink]="['/']">Home</a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink]="['summary', currentIndex]">Information</a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink]="['skills', currentIndex]">Skills</a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink]="['projects', currentIndex]">Projects</a>
+  </li>
+</ul>
+<br />
+<div class="form-group" *ngIf="showselect">
+  <label>User:</label>
+  <select class="form-control" [(ngModel)]="currentIndex" (change)="change()">
+    <option *ngFor="let u of service.users;let i=index" [value]="i">{{u.Name + " " + u.Surname}}</option>
+  </select>
+</div>
+<router-outlet></router-outlet>

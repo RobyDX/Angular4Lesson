@@ -1,0 +1,18 @@
+﻿<style>
+  input.ng-invalid.ng-dirty {
+    background-color: red;
+    border-width: 2px;
+  }
+</style>
+<h1>Validators</h1>
+<form #f="ngForm" autocomplete="off">
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="text1" name="txt1" required="" placeholder="required" />
+    <span [hidden]="f.controls.txt1?.valid">Required</span>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="text2" name="txt2" required="" maxlength="10" placeholder="max lenght 10" />
+    <span [hidden]="f.controls.txt2?.valid">Required and max 10 characters</span>
+  </div>
+  <input type="submit" [disabled]="!f.valid" class="btn" (click)="Test()" />
+</form>

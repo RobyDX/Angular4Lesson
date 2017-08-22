@@ -1,0 +1,31 @@
+﻿<style>
+  input.ng-invalid.ng-dirty {
+    background-color: red;
+    border-width: 2px;
+  }
+</style>
+<h1>Form Builder</h1>
+<form [formGroup]="myform" novalidate (ngSubmit)="save()" autocomplete="off">
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="name" placeholder="nome" />
+    <span [hidden]="myform.controls.name.valid">Required</span>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="surname" placeholder="surname" />
+    <span [hidden]="myform.controls.surname.valid">Required</span>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" formControlName="email" placeholder="email" />
+    <span [hidden]="myform.controls.email.valid">Email not valid</span>
+  </div>
+  <div class="form-group" formGroupName="address">
+    <input type="text" class="form-control" formControlName="street" placeholder="street" />
+    <span [hidden]="myform.controls.address.controls.street.valid">Required</span>
+  </div>
+  <div class="form-group" formGroupName="address">
+    <input type="text" class="form-control" formControlName="number" placeholder="number" />
+    <span [hidden]="myform.controls.address.controls.number.valid">Number only</span>
+  </div>
+  <input type="submit" [disabled]="!myform.valid" value="Save" class="btn" />
+</form>
+<p>Value: {{ myform.value | json }}</p>

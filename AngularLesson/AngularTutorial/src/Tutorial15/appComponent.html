@@ -1,0 +1,29 @@
+﻿<h1>Http & Rest</h1>
+<table class="table">
+  <tr>
+    <th>
+      Country
+    </th>
+    <th>
+      Capital
+    </th>
+    <th>
+      Region
+    </th>
+  </tr>
+  <tr *ngFor="let i of countries">
+    <td>
+      {{i.name}}
+    </td>
+    <td>
+      {{i.capital}}
+    </td>
+    <td>
+      {{i.region}}
+    </td>
+  </tr>
+</table>
+<br />
+<strong>
+  <a href="#" (click)="Refresh();false">Refresh</a>  
+</strong>

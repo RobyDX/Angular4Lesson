@@ -1,0 +1,17 @@
+﻿<style>
+    input.ng-invalid.ng-dirty {
+        background-color: red;
+        border-width: 2px;
+    }
+</style>
+<form [formGroup]="myform" novalidate (ngSubmit)="save()" autocomplete="off">
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="name" placeholder="name" />
+        <span [hidden]="myform.controls.name.valid">Required</span>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="surname" placeholder="surname" />
+        <span [hidden]="myform.controls.surname.valid">Required</span>
+    </div>
+    <input type="submit" [disabled]="!myform.valid" value="save" class="btn" />
+</form>

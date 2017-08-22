@@ -1,0 +1,12 @@
+﻿<table class="table" *ngIf="items.length>0">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of items"><td>{{i.name}}</td><td>{{i.surname}}</td></tr>
+    </tbody>
+</table>
+
